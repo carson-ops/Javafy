@@ -1,30 +1,36 @@
+import java.awt.*;
 import javax.swing.*;
 
-// Main class
-class GFG {
 
+// Main class
+class Main {
     // Main driver method
     public static void main(String[] args)
     {
         // Creating instance of JFrame
         JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Actually closes the program instead of staying open forever
+        frame.setSize(900, 600); // w x h
 
-        // Creating instance of JButton
-        JButton button = new JButton(" GFG WebSite Click");
+        JPanel bottompanel = new JPanel();
+        JButton psbutton = new JButton("Pause");
+        JButton rsbutton = new JButton("Resume");
 
-        // x axis, y axis, width, height
-        button.setBounds(150, 200, 220, 50);
+        JPanel toppanel = new JPanel();
+        JButton audiobutton = new JButton("Select Audio");
 
-        // adding button in JFrame
-        frame.add(button);
+        bottompanel.add(psbutton);
+        bottompanel.add(rsbutton);
+        toppanel.add(audiobutton);
 
-        // 400 width and 500 height
-        frame.setSize(500, 600);
-
-        // using no layout managers
-        frame.setLayout(null);
+        frame.add(bottompanel, BorderLayout.SOUTH); // push button to bottom
+        frame.add(toppanel, BorderLayout.NORTH);
 
         // making the frame visible
         frame.setVisible(true);
+    }
+
+    static void GrabAudio(String audiofile) {
+
     }
 }
