@@ -33,7 +33,7 @@ class Main {
     }
 
     static void GrabAudio() {
-        // TODO: "Select Audio" pressed -> File explorer window pops up (certain extensions allowed) -> grab file path
+        // TODO: "Select Audio" pressed -> File explorer window pops up (certain extensions allowed) -> grab file path.
 
         // Media med = new Media(getClass().getResource(filepath).toExternalForm());
         // MediaPlayer mPlayer = new MediaPlayer(med);
