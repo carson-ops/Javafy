@@ -37,10 +37,7 @@ class Main {
     static void GrabAudio() {
         // TODO: "Select Audio" pressed -> File explorer window pops up (certain extensions allowed) -> grab file path.
         final JFileChooser fc = new JFileChooser();
-        int returnVal = fc.showOpenDialog();
-
-        //Media med = new Media(getClass().getResource(fc).toExternalForm());
-        //MediaPlayer mPlayer = new MediaPlayer(med);
+        int returnVal = fc.showOpenDialog(fc);
     }
 
 }
