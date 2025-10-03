@@ -1,5 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -48,7 +50,9 @@ class Main {
 
     public void OpenDialog() { // button component
         final JFileChooser fc = new JFileChooser();
-        int result = fc.showOpenDialog(audiobutton);
+        FileFilter filter = new FileNameExtensionFilter("MP3 File","mp3", "MP4 File", "mp4", "WAV File", ".wav");
+        fc.setFileFilter(filter);
+        int result = fc.showDialog(audiobutton, "Pick Song");
 
         if (result == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();
