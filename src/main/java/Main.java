@@ -1,10 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.filechooser.FileFilter;
 import java.io.File;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+
 
 // Main class
 class Main {
@@ -28,7 +26,6 @@ class Main {
         JButton audiobutton = new JButton("Select Audio");
 
         audiobutton.addActionListener(e -> OpenDialog());
-        // TODO: Listen for button press -> GrabAudio() -> Media loaded & Media player ready
 
         JPanel midpanel = new JPanel(); // middle of screen
         currentsong = new JLabel("No Song Picked."); // NOTE: don't redeclare fields, just assign them | stumped me when I called JLabel before current song
@@ -60,7 +57,7 @@ class Main {
             String name = file.getName().toLowerCase();
             boolean matches = false;   
             
-            for (String filter : filters.getExtensions()) {
+            for (String filter : filters.getExtensions()) { // for filter in filters 
                 if (name.endsWith("." + filter)) { // could probably get away with contains instead of endsWith
                     matches = true;
                     break;
@@ -76,6 +73,7 @@ class Main {
             
         }
     }
+
 
     public static void main(String[] args) {
 
