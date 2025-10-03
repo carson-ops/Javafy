@@ -50,19 +50,30 @@ class Main {
 
     public void OpenDialog() { // button component
         final JFileChooser fc = new JFileChooser();
-        FileFilter filter = new FileNameExtensionFilter("MP3 File","mp3", "MP4 File", "mp4", "WAV File", ".wav");
-        fc.setFileFilter(filter);
+        FileNameExtensionFilter filters = new FileNameExtensionFilter("Audio Files","mp3", "mp4", "wav"); // Switched FileFilter -> FileNameExtensionFilter for .getExtensions()
+        fc.setFileFilter(filters);
+
         int result = fc.showDialog(audiobutton, "Pick Song");
 
         if (result == JFileChooser.APPROVE_OPTION) {
-            File file = fc.getSelectedFile();
-
-            if (file == null) {
-                currentsong.setText("No Song Picked! test"); 
-            } else {
-                currentsong.setText("Song Playing: " + file);
+            File file = fc.getSelectedFile(); // path to file
+            String name = file.getName().toLowerCase();
+            boolean matches = false;   
+            
+            for (String filter : filters.getExtensions()) {
+                if (name.endsWith("." + filter)) { // could probably get away with contains instead of endsWith
+                    matches = true;
+                    break;
+                }
             }
-             
+
+            if (matches) {
+                currentsong.setText("Current Song: " + name);
+            } else if (!matches) {
+                currentsong.setText("File Extension not Supported");
+                return; // stop for no matches
+            }
+            
         }
     }
 
