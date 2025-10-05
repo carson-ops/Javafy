@@ -1,10 +1,10 @@
-import java.awt.*;
+// TODO: Add Image in center of GUI from Audio image
+// TODO: Change activelbl to, "Song Ended" after song is over
 
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import java.io.File;
-
 import javafx.application.Platform;
 
 
