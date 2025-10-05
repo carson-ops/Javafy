@@ -10,10 +10,6 @@ ext = ".java"
 allowed = []
 
 
-print(os.getenv("PATH"))
-print(os.getenv("FILE_DIR"))
-print(os.getenv("RUN"))
-
 DIR = os.listdir(FILE_DIR)
 
 for file in DIR:
