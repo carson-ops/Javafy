@@ -97,7 +97,7 @@ class Main {
                 activelbl.setText("| Song Playing!");
             } else if (!matches) {
                 currentsong.setText("File Extension not Supported");
-                return; // stop for no matches
+                file = null; // updating check on pause and play button
             }
             
         }
