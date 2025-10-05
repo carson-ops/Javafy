@@ -113,7 +113,7 @@ class Main {
         }); */ // Man oh man, I decided to make a non-static method to reference OpenDialog even though I could've done the comment above -_-
                // Stil allows me to work in the OpenDialog method which helps with organization
 
-        Platform.startup(() -> {
+        Platform.startup(() -> { // needed to init JavaFX for media purposes | Application.launch(...) For a full JavaFX app
             
         });
         new Main().initUI();
