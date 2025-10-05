@@ -1,11 +1,18 @@
 import os
+from dotenv import load_dotenv
 
-PATH = "C:/Program Files/Java/javafx-sdk-25/lib"
-FILE_DIR = "C:/Users/carso/OneDrive/Desktop/yava/Javafy/src/main/java/"
-RUN = "C:/Users/carso/OneDrive/Desktop/yava/Javafy/src/main/java/Main.java"
+load_dotenv()
+
+PATH = os.getenv("LIB_PATH") # Apparently setting the variable PATH in .env counts as your actual PATH in env variables
+FILE_DIR = os.getenv("FILE_DIR")
+RUN = os.getenv("RUN")
 ext = ".java"
 allowed = []
 
+
+print(os.getenv("PATH"))
+print(os.getenv("FILE_DIR"))
+print(os.getenv("RUN"))
 
 DIR = os.listdir(FILE_DIR)
 
