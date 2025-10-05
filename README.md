@@ -2,7 +2,7 @@
 A Java written local music player for audio files
 
 ## How to Run
-1. Add a .ENV file in this root directory
+1. Add a ```.env``` file in this root directory
 2. Add these variables to your .ENV ```LIB_PATH, FILE_DIR, and RUN```
 ---
 ### Setting .ENV paths
