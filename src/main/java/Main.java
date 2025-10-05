@@ -53,7 +53,7 @@ class Main {
 
         JPanel midpanel = new JPanel(); // middle of screen
         currentsong = new JLabel("No Song Picked."); // NOTE: don't redeclare fields, just assign them | stumped me when I called JLabel before current song
-        activelbl = new JLabel("Not Playing.");
+        activelbl = new JLabel("| Not Playing.");
 
         bottompanel.add(psbutton);
         bottompanel.add(rsbutton);
@@ -94,7 +94,7 @@ class Main {
                 currentsong.setText("Current Song: " + name);
                 audioplayer.load(file);
                 audioplayer.play();
-                activelbl.setText("Song Playing!");
+                activelbl.setText("| Song Playing!");
             } else if (!matches) {
                 currentsong.setText("File Extension not Supported");
                 return; // stop for no matches
