@@ -1,5 +1,7 @@
 // TODO: Add Image in center of GUI from Audio image
 // TODO: Change activelbl to, "Song Ended" after song is over
+// TODO: Add audio volume slider
+// TODO: Add Audio time tracker
 
 import java.awt.*;
 import javax.swing.*;
@@ -32,14 +34,14 @@ class Main {
         psbutton.addActionListener(e -> {
             audioplayer.pause();
             if (file != null){
-                activelbl.setText("Song Paused.");
+                activelbl.setText("| Song Paused.");
             }
         });
 
         rsbutton.addActionListener(e -> {
             audioplayer.play();
             if (file != null) {
-                activelbl.setText("Song Playing!");
+                activelbl.setText("| Song Playing!");
             }
         });
 
